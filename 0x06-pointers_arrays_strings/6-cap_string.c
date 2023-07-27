@@ -2,7 +2,7 @@
 
 /**
  * cap_string - function that capitalizes all words of a string.
-
+ *
  * @str: input type string
  *
  * Return: pointer to string
