@@ -5,11 +5,11 @@
  *main - print the result of the multiplication
  *
  *@argc: number of argument
- *@argv: pointer to array 
+ *@argv: pointer to array
  *
  *Return: 0 (Success), 1 (Error)
  */
-int main(int argc,char *argv[])
+int main(int argc, char *argv[])
 {
 	int result;
 
