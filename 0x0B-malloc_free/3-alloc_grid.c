@@ -39,5 +39,5 @@ int **alloc_grid(int width, int height)
 			tab[x][y] = 0;
 	}
 
-	return (mee);
+	return (tab);
 }
