@@ -3,20 +3,22 @@
 /**
  * *_memset - fills memory with a constant byte
  *
- * @s: pointer to put the constant
- * @b: constant input type char
- * @n: number of max bytes to be used
+ * @s: pointer to constant
+ * @b: constant type char
+ * @n: number of byte to be used
  *
  * Return: pointer to the memory area s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
-	char *p = s;
+	unsigned int i;
 
-	while (n--)
-		*s++ = b;
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
 
-	return (p);
+	return (s);
 }
 
 /**
@@ -29,16 +31,18 @@ char *_memset(char *s, char b, unsigned int n)
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	void *m;
+	char *m;
 
-	if (size == 0 || nmemb == 0)
-		return (NULL);
-	m = malloc(sizeof(int) * nmemb);
-
-	if (m == 0)
+	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	_memset(m, 0, sizeof(int) * nmemb);
+	m = malloc(size * nmemb);
+
+	if (m == NULL)
+		return (NULL);
+
+	_memset(m, 0, nmemb * size);
 
 	return (m);
 }
+
