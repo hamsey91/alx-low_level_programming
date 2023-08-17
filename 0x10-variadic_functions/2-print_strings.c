@@ -2,7 +2,7 @@
 
 /**
  * print_strings - function that prints strings, followed by a new line.
-
+ *
  * @separator: The string separator
  * @n: The number of strings passed to the function.
  * @...: integers to print
