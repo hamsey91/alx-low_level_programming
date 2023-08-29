@@ -17,10 +17,10 @@ int pop_listint(listint_t **head)
 	if (!head || !*head)
 		return (0);
 
-	i = (*head)->i;
 	node = (*head)->next;
+	i = (*head)->i;
 	free(*head);
 	*head = node;
-
+	
 	return (i);
 
