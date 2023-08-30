@@ -20,7 +20,7 @@ listint_t *f_loop_place(listint_t *head)
 		if (end == end->next)
 			return (end);
 		for (p = head; p != end; p = p->next)
-			if (p == end->nest)
+			if (p == end->next)
 				return (end->next);
 	}
 	return (NULL);
@@ -37,17 +37,17 @@ size_t free_listint_safe(listint_t **h)
 {
 	listint_t *next, *lp_node;
 	size_t len;
-	int loop = 1;
+	int lp = 1;
 
 	if (!h || !*h)
 		return (0);
 
 	lp_nood = f_loop_place(*h);
-	for (len = 0; (*h != loopnode || loop) && *h != NULL; *h = next)
+	for (len = 0; (*h != lp_node || lp) && *h != NULL; *h = next)
 	{
 		len++;
 		next = (*h)->next;
-		if (*h == lp_node && loop)
+		if (*h == lp_node && lp)
 		{
 			if (lp_node == lp_node->next)
 			{
@@ -57,11 +57,10 @@ size_t free_listint_safe(listint_t **h)
 			len++;
 			next = next->next;
 			free((*h)->next);
-			loop = 0;
+			lp = 0;
 		}
 		free(*h);
 	}
-
 	*h = NULL;
 
 	return (len);
