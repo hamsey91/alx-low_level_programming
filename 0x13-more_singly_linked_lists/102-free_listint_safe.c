@@ -2,25 +2,25 @@
 #include <stdlib.h>
 
 /**
- * f_loop_place - function that find a loop in a a listint_t list.
+ * finf_listint_loop_fl - function that find a loop in a a listint_t list.
  *
- * @head: pointer to pointer to the first node
+ * @head: pointer to the first node
  *
  * Return: adress to the node where the loop begin, 0 if no loop
  */
-listint_t *f_loop_place(listint_t *head)
+listint_t *find_listint_loop_fl(listint_t *head)
 {
-	listint_t *p, *end;
+	listint_t *ptr, *end;
 
-	if (!head)
+	if (head == NULL)
 		return (NULL);
 
 	for (end = head->next; end != NULL; end = end->next)
 	{
 		if (end == end->next)
 			return (end);
-		for (p = head; p != end; p = p->next)
-			if (p == end->next)
+		for (ptr = head; ptr != end; ptr = ptr->next)
+			if (ptr == end->next)
 				return (end->next);
 	}
 	return (NULL);
@@ -39,10 +39,10 @@ size_t free_listint_safe(listint_t **h)
 	size_t len;
 	int lp = 1;
 
-	if (!h || !*h)
+	if (h == NULL || *h == NULL)
 		return (0);
 
-	lp_nood = f_loop_place(*h);
+	lp_nood = find_listint_loop_fl(*h);
 	for (len = 0; (*h != lp_node || lp) && *h != NULL; *h = next)
 	{
 		len++;
