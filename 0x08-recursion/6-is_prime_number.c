@@ -17,7 +17,7 @@ int is_prime_number(int n)
 }
 
 /**
- * check_prime - check all number 
+ * check_prime - check all number
  * @n: number to check
  * @a: int
  *
