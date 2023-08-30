@@ -10,10 +10,10 @@
 size_t free_listint_safe(listint_t **h)
 {
 	listint_t *node;
-	size_t len ;
+	size_t len;
 	int loop;
 
-	if (!h || !*h)
+	if (h == NULL || *h == NULL)
 		return (0);
 
 	while (*h)
@@ -34,6 +34,7 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 	}
+
 	*h = NULL;
 
 	return (len);
