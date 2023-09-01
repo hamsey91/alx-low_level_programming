@@ -3,22 +3,26 @@
 /**
  * print_binary - function that prints the binary representation of a number.
  *
- * @n: the number to print
+ * @n: number to print
  */
 void print_binary(unsigned long int n)
 {
-	int i = sizeof(n) * 8, count = 0;
+	int i, printed = 0;
+	unsigned long int c_bit;
 
-	while (i)
+	for (i = 63; i >= 0; i--)
 	{
-		if (n & 1ul << --bit)
+		c_bit = n >> i;
+
+		if (c_bit & 1)
 		{
 			_putchar('1');
-			count++;
+			printed++;
 		}
-		else if (count)
+		else if (printed)
 			_putchar('0');
 	}
-	if (!count)
+	if (!printed)
 		_putchar('0');
 }
+
