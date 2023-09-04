@@ -32,14 +32,14 @@ int main(int argc, char **argv)
 	while (( b = read(from, buffer, READ_BUF_SIZE)) > 0)
 		if (write(to, buffer, b) != b)
 			 dprintf(STDERR_FILENO, NOT_WRITE_ERROR, argv[2]), exit(99);
-	if (b ==-1)
+	if (b == -1)
 		 dprintf(STDERR_FILENO, NOT_READ_ERROR, argv[1]), exit(98);
 
 	from = close(from);
 	to = close(to);
 	if (from)
 		 dprintf(STDERR_FILENO, NOT_CLOSE_ERROR, from), exit(100);
-	if (tp)
+	if (to)
 		 dprintf(STDERR_FILENO, NOT_CLOSE_ERROR, from), exit(100);
 
 	return (0);
