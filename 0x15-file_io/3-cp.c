@@ -5,6 +5,7 @@
 #define WRITE_ERROR "Error: Can't write to %s\n"
 #define CLOSE_ERROR "Error: Can't close fd %d\n"
 #define PERMISSIONS (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
+#define READ_BUF_SIZE 1024
 
 /**
 * main - program that copies the content of a file to another file.
