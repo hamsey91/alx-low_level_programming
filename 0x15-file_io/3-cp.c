@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	if (to == -1)
 		 dprintf(STDERR_FILENO, WRITE_ERROR, argv[2]), exit(99);
 
-	while (( b = read(from, buffer, READ_BUF_SIZE)) > 0)
+	while ((b = read(from, buffer, READ_BUF_SIZE)) > 0)
 		if (write(to, buffer, b) != b)
 			 dprintf(STDERR_FILENO, WRITE_ERROR, argv[2]), exit(99);
 	if (b == -1)
