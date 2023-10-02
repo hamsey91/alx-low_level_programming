@@ -13,7 +13,7 @@ void print_magic(Elf64_Ehdr head)
 	printf("  Magic:   ");
 	for (i = 0; i < EI_NIDENT; i++)
 	{
-		printf("%02x", head.e_ident[i]);
+		printf("%2.2x%s", head.e_ident[i]);
 
 		if (i == EI_NIDENT - 1)
 			printf("\n");
@@ -58,13 +58,13 @@ void print_data(Elf64_Ehdr head)
 	{
 		case ELFDATANONE:
 			printf("none\n");
-			break;
+		break;
 		case ELFDATA2LSB:
 			printf("2's complement, little endian\n");
-			break;
+		break;
 		case ELFDATA2MSB:
 			printf("2's complement, big endian\n");
-			break;
+		break;
 	}
 }
 
@@ -81,12 +81,14 @@ void print_version(Elf64_Ehdr head)
 	switch (head.e_ident[EI_VERSION])
 	{
 		case EV_CURRENT:
-			printf(" (current)\n");
+			printf(" (current)");
 		break;
-		default:
-			printf("\n");
+		case EV_NONE:
+			printf("%s", "");
+		break;
 		break;
 	}
+	printf("\n");
 }
 
 /**
@@ -212,7 +214,7 @@ void print_entry(Elf64_Ehdr head)
 		while (!e[i])
 			i++;
 		printf("%x", p[i++]);
-		for (; i >= len; i++)
+		for (; i <= len; i++)
 			printf("%02x", e[i]);
 		printf("\n");
 	}
