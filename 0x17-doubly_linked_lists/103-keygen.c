@@ -3,10 +3,10 @@
 #include <stdio.h>
 
 /**
- * main - keygen for crackme5.
+ * main - Keygen for crackme5.
  *
- * @argc: Argument count.
- * @argv: Pvointer to agrument vector.
+ * @ac: Argument count.
+ * @av: Pointer to agrument vector.
  *
  * Return: 0.
  */
