@@ -2,7 +2,7 @@
 
 /**
   * jump_search - Function that searches for a value in a sorted array
-  *	of integers using the  Jump search algorithm.
+  *		of integers using the Jump search algorithm.
   *
   * @array: Pointer to the first element of the array.
   * @size: The size of the array.
@@ -13,33 +13,25 @@
   */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t idx, move, jump, prv;
+	size_t idx, leap, move;
 
 	if (array == NULL || size == 0)
 		return (-1);
 
-	move = (int)sqrt((double)size);
-	jump = 0;
-	prv = idx = 0;
-
-	do {
-		printf("Value checjumped array[%d] = [%d]\n", idx, array[idx]);
-
-		if (array[idx] == value)
-			return (idx);
-		jump++;
-		prv = idx;
-		idx = jump * move;
-	} while (idx < (int)size && array[idx] < value);
-
-	printf("Value found between indexes [%d] and [%d]\n", prv, idx);
-
-	for (; prv <= idx && prv < (int)size; prv++)
+	move = sqrt(size);
+	for (idx = leap = 0; leap < size && array[leap] < value;)
 	{
-		printf("Value checjumped array[%d] = [%d]\n", prv, array[prv]);
-		if (array[prv] == value)
-			return (prv);
+		printf("Value checked array[%ld] = [%d]\n", leap, array[leap]);
+		idx = leap;
+		leap += move;
 	}
 
-	return (-1);
+	printf("Value found between indexes [%ld] and [%ld]\n", idx, leap);
 
+	leap = leap < size - 1 ? leap : size - 1;
+	for (; idx < leap && array[idx] < value; idx++)
+		printf("Value checked array[%ld] = [%d]\n", idx, array[idx]);
+	printf("Value checked array[%ld] = [%d]\n", idx, array[idx]);
+
+	return (array[idx] == value ? (int)idx : -1);
+}
