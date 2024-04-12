@@ -3,7 +3,7 @@
 /**
   * my_binary_search - Function that searches for a value in a sorted array
   *             of integers using the Binary search algorithm.
-  * 
+  *
   * @array: Pointer to the first element of the array.
   * @gauche: The begin index of the sub-array to search fot it.
   * @droite: The last index of the sub-array to search for it.
@@ -63,7 +63,7 @@ int exponential_search(int *array, size_t size, int value)
 			printf("Value checked array[%ld] = [%d]\n", idx, array[idx]);
 	}
 
- droite = idx < size ? idx : size - 1;
+droite = idx < size ? idx : size - 1;
 	printf("Value found between indexes [%ld] and [%ld]\n", idx / 2, droite);
 	return (my_binary_search(array, idx / 2, droite, value));
 }
