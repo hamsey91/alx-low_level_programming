@@ -1,4 +1,5 @@
 #include "search_algos.h"
+#include <math.h>
 
 /**
   * jump_search - Function that searches for a value in a sorted array
