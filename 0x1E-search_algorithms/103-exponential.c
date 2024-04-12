@@ -2,44 +2,44 @@
 
 /**
   * binary_search - Function that searches for a value in a sorted array
-  *             of integers using the Binary search algorithm
+  *		of integers using the Binary search algorithm
   *
   * @array: Pointer to the first element of the array.
   * @size: The size of the array.
   * @value: The value to search for it.
   *
   * Return: -1 If the value is not present or the array is NULL
-  *     The index where the value is located.
+  *	The index where the value is located.
   */
 int binary_search(int *array, size_t size, int value)
 {
-        size_t idx, gauche, droite;
+	size_t idx, gauche, droite;
 
-        if (array == NULL)
-                return (-1);
+	if (array == NULL)
+		return (-1);
 
-        for (gauche = 0, droite = size - 1; droite >= gauche;)
-        {
-                printf("Searching in array: ");
-                for (idx = gauche; idx < droite; idx++)
-                        printf("%d, ", array[idx]);
-                printf("%d\n", array[idx]);
+	for (gauche = 0, droite = size - 1; droite >= gauche;)
+	{
+		printf("Searching in array: ");
+		for (idx = gauche; idx < droite; idx++)
+			printf("%d, ", array[idx]);
+		printf("%d\n", array[idx]);
 
-                i = gauche + (droite - gauche) / 2;
-                if (array[idx] == value)
-                        return (idx);
-                if (array[idx] > value)
-                        droite = idx - 1;
-                else
-                        gauche = idx + 1;
-        }
+		idx = gauche + (droite - gauche) / 2;
+		if (array[idx] == value)
+			return (idx);
+		if (array[idx] > value)
+			droite = idx - 1;
+		else
+			gauche = idx + 1;
+	}
 
-        return (-1);
+	return (-1);
 }
 
 /**
-  * interpolation_search - Function that searches for a value in a sorted array
-  *     of integers using the Interpolation search algorithm.
+  * exponential_search - Function that searches for a value in a sorted array
+  *     of integers using the Exponential search algorithm.
   *
   * @array: Pointer to the first element of the array.
   * @size: The size of the array.
@@ -61,7 +61,7 @@ int exponential_search(int *array, size_t size, int value)
 			printf("Value checked array[%ld] = [%d]\n", idx, array[idx]);
 	}
 
- droite = idx < size ? idx : size - 1;
+droite = idx < size ? idx : size - 1;
 	printf("Value found between indexes [%ld] and [%ld]\n", idx / 2, droite);
 	return (_binary_search(array, idx / 2, droite, value));
 }
