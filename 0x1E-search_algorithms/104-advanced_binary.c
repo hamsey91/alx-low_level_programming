@@ -2,7 +2,7 @@
 
 /**
   * recursive_binary_search - Function that searches for a value in a sorted
-  *		array of integers using a recursive banary search
+  *		array of integers using a recursive banary search.
   * @array: Pointer to the first element of the sub-array.
   * @gauche: The first index of the sub-array.
   * @droite: The last index of the sub-array.
@@ -48,3 +48,4 @@ int advanced_binary(int *array, size_t size, int value)
 
 	return (recursive_binary(array, 0, size - 1, value));
 }
+
