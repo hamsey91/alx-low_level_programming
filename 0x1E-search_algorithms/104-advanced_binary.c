@@ -8,8 +8,8 @@
   * @droite: The last index of the sub-array.
   * @value: The value to search for it.
   *
-  * Return: 1 If the value is not present or the array is NULL
-  *			The index where the value is located.
+  * Return: -1 If the value is not present or the array is NULL
+  *	The index where the value is located.
   */
 int recursive_binary(int *array, size_t gauche, size_t droite, int value)
 {
@@ -39,7 +39,7 @@ int recursive_binary(int *array, size_t gauche, size_t droite, int value)
   * @value: The value to search for it.
   *
   * Return: -1 If the value is not present or the array is NULL
-  *         The index where the value is located.
+  *	The index where the value is located.
   */
 int advanced_binary(int *array, size_t size, int value)
 {
