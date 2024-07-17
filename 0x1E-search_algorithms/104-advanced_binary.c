@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
-  * recursive_binary - Function that searches for a value in a sorted array
+  * rec_binary - Function that searches for a value in a sorted array
   *		of integers using a recursive banary search
   * @array: Pointer to the first element of the sub-array.
   * @gauche: The first index of the subarray.
